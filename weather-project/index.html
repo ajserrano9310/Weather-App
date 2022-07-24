@@ -11,7 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Weather-icon-set-font-PIXEDEN-v-1-0-0-PIXEDEN/pe-icon-set-weather/css/pe-icon-set-weather.css" />
+    
+    
 
     <script
       src="https://kit.fontawesome.com/89202e165b.js"
@@ -20,19 +24,22 @@
   </head>
   <body>
     <h1>Tiny weather app</h1>
+    <i class="pe-is-w-degree-fahrenheit"></span> 
 
     <div>
 
         <i class="fa-solid fa-magnifying-glass"></i>
         <input type="text" id="cityName" name="cityName">
+        <button onclick="processUserRequest()">Get weather</button>
     
     </div>
     <div>
-      <button onclick="getInformation2()">Get weather</button>
+      
     </div>
 
     <div class="city-wrapper">City</div>
     <div class="temp-wrapper">Temp</div>
     <script src="logic.js"></script>
+
   </body>
 </html>
