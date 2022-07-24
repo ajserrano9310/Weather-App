@@ -1,5 +1,15 @@
 
 body{
+
     font-family: 'Roboto', sans-serif;
-    padding-left: 100px;
+    /*padding-left: 100px;*/
+
+    max-width: 500px;
+    margin: auto;
+}
+
+.temp-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }

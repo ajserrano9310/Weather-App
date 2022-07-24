@@ -2,6 +2,12 @@
 var uri = "https://api.openweathermap.org/data/2.5/weather?lat=40.7608&lon=-111.8910&units=metric&appid=117dc4bba31cb1ddc1ceeb399015666e"
 
 const API_KEY = "117dc4bba31cb1ddc1ceeb399015666e";
+const DEFAULT_CITY = "New York";
+
+window.onload = (event) => {
+    let cityUri = "http://api.openweathermap.org/geo/1.0/direct?q=" + DEFAULT_CITY + "&limit=5&appid=" + API_KEY;
+    processUserRequest(cityUri);
+}
 
 const getInformation = function(){
 
@@ -41,15 +47,19 @@ function processWeatherResponse(obj){
     let cityText = document.getElementsByClassName("city-wrapper")[0];
     cityText.innerHTML = obj.cityName; 
 
-    let weatherText = document.getElementsByClassName("temp-wrapper")[0];
+    let weatherText = document.getElementsByClassName("temperature")[0];
     weatherText.innerHTML = obj.temperature;
 
 }
 
-function processUserRequest(){
+function processUserInput(){
 
     let city = document.getElementById("cityName").value; 
     let cityUri = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid="+API_KEY;
+    processUserRequest(cityUri);
+}
+
+function processUserRequest(cityUri){
 
     fetch(cityUri)
     .then(function(response){
