@@ -50,6 +50,8 @@ function processWeatherResponse(obj){
     let weatherText = document.getElementsByClassName("temperature")[0];
     weatherText.innerHTML = obj.temperature;
 
+    document.getElementsByClassName("status")[0].innerHTML = obj.status;
+
 }
 
 function processUserInput(){
@@ -57,6 +59,8 @@ function processUserInput(){
     let city = document.getElementById("cityName").value; 
     let cityUri = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid="+API_KEY;
     processUserRequest(cityUri);
+    document.getElementById("cityName").value = "";
+    
 }
 
 function processUserRequest(cityUri){
@@ -77,14 +81,15 @@ function processUserRequest(cityUri){
             return weatherResponse.json();
         })
         .then(function(weatherJson){
-
+            console.log(weatherJson);
             const {name} = weatherJson;
             const {temp} = weatherJson.main;
-
+            const {main} = weatherJson.weather[0];
 
             let weatherObject = {
                 cityName: name, 
-                temperature: temp
+                temperature: temp,
+                status: main
             }
 
             processWeatherResponse(weatherObject);

@@ -1,15 +1,51 @@
 
 body{
 
-    font-family: 'Roboto', sans-serif;
-    /*padding-left: 100px;*/
+    font-family: 'Ibarra Real Nova', sans-serif;
+    
 
     max-width: 500px;
     margin: auto;
+
+    background-image: url("/resources/wp2752752.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .temp-wrapper{
     display: flex;
     flex-direction: row;
     gap: 5px;
+}
+
+.temperature{
+    font-size: 100px;
+}
+
+.celsius{
+    font-size: 100px;
+}
+
+.card{
+    background-color: aliceblue;
+    opacity: 0.75;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.city-wrapper{
+    font-size: 30px;
+    font-weight: 10px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 75px;
+    padding-bottom: 20px;
+
+    
 }
